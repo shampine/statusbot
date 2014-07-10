@@ -65,7 +65,7 @@ function api_url($api) {
 
   $url = implode('&', $query);
 
-  $api_url = $api_url . $url . '&format=json';
+  $api_url = $api_url . $url;
 
   return $api_url;
 
