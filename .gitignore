@@ -5,3 +5,4 @@ node_modules
 env_local
 env_staging
 config.php
+response.json

@@ -40,22 +40,59 @@ function theAnalytics() {
   }
 }
 
-function get_content($file,$url,$hours = 24,$fn = '',$fn_args = '') {
+// $file = __DIR__.'/resonse.json';
+// $url =
 
-  $current_time = time(); $expire_time = $hours * 60 * 60; $file_time = filemtime($file);
+// $api_data = get_content(__DIR__ . 'response.json', )
+
+function api_url($api) {
+
+  $api_url = 'http://api.uptimerobot.com/getMonitors?';
+
+  foreach($api as $key=>$value) {
+
+    if(!isset($key) || $value == '') {
+
+      unset($key);
+
+    } else {
+
+      $query[] = $key.'='.$value;
+
+    }
+
+  }
+
+  $url = implode('&', $query);
+
+  $api_url = $api_url . $url . '&format=json';
+
+  return $api_url;
+
+}
+
+function get_content($file,$url,$min = 5) {
+
+  $current_time = time(); 
+  $expire_time = $min * 60; 
+  $file_time = filemtime($file);
 
   if(file_exists($file) && ($current_time - $expire_time < $file_time)) {
 
     return file_get_contents($file);
 
+    var_dump("TRUE");
+
   } else {
+
+    var_dump($file);
 
     $content = get_url($url);
     if($fn) { 
       $content = $fn($content,$fn_args); 
     }
     
-    $content.= '<!-- cached:  '.time().'-->';
+    // $content.= '<!-- cached:  '.time().'-->';
     file_put_contents($file,$content);
 
     return $content;
@@ -76,3 +113,7 @@ function get_url($url) {
   return $content;
 
 }
+
+$file = __DIR__ . '/response.json';
+$api_url = api_url($api_args);
+$monitor_response = json_decode(get_content($file, $api_url), true);

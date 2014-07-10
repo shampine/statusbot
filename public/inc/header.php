@@ -19,4 +19,21 @@
     <script type='text/javascript' src='js/modernizr.js'></script>
     <?php echo theAnalytics(); ?>
   </head>
-  <body>
+  <body><?php
+
+  var_dump($monitor_response);
+
+  $monitors = $monitor_response['monitors']['monitor'];
+
+  echo '<ul>';
+
+  foreach($monitors as $monitor) {
+
+    echo '<li>'.$monitor['friendlyname'].' is '.$monitor['status'].'</li>';
+
+
+  }
+
+  echo '</ul>';
+
+  ?>
