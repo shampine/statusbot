@@ -1,0 +1,13 @@
+{
+  "name": "lp-boilerplate",
+  "version": "0.2.1",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-browser-sync": "~0.3.0",
+    "grunt-contrib-compass": "~0.2.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-imagemin": "~0.4.0",
+    "grunt-contrib-watch": "~0.4.3",
+    "matchdep": "~0.1.2"
+  }
+}
