@@ -50,9 +50,9 @@ if ( file_exists( dirname( __FILE__ ) . '/env_local' ) ) {
 /**
 * Uptime Robot
 *
-* Sets the API and the custom URL for the call to uptime robot.
+* Sets the API and the custom URL for the call to uptime robot. The format need for the monitors is JSON.
 *
 **/
 
-$api_key = '';
-$api_url = '';
+$api_key = 'u956-afus321g565fghr519';
+$api_url = 'http://api.uptimerobot.com/getMonitors?apiKey=u956-afus321g565fghr519&logs=1&alertContacts=1&responseTimes=1&responseTimesAverage=180&monitors=15830-32696&customUptimeRatio=30&format=json';
