@@ -1,4 +1,4 @@
-<?php include_once('../config.php'); ?>
+<?php include_once('../functions.php'); ?>
 <!DOCTYPE html>
 <html class="no-js">
   <head>
