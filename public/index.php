@@ -2,7 +2,7 @@
 
   <div class="container">
     <p class="updated">Updated: <?php echo date('D g:i a', $monitor_response_time); ?></p>
-    <div class="table-responsive">
+    <div class="table-responsive animated bounceInUp">
       <table class="table">
         <thead>
           <tr>
