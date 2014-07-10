@@ -21,8 +21,6 @@
   </head>
   <body><?php
 
-  var_dump($monitor_response);
-
   $monitors = $monitor_response['monitors']['monitor'];
 
   echo '<ul>';
@@ -35,5 +33,7 @@
   }
 
   echo '</ul>';
+
+  var_dump($monitor_response_time);
 
   ?>

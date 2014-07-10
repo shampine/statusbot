@@ -74,30 +74,35 @@ function api_url($api) {
 function get_content($file,$url,$min = 5) {
 
   $current_time = time(); 
-  $expire_time = $min * 60; 
-  $file_time = filemtime($file);
+  $expire_time = $min * 60;
+  $data = array();
 
-  if(file_exists($file) && ($current_time - $expire_time < $file_time)) {
+  if(file_exists($file)) {
 
-    return file_get_contents($file);
-
-    var_dump("TRUE");
+    $file_time = filemtime($file);
+    $data['time'] = $file_time;
 
   } else {
 
-    var_dump($file);
-
-    $content = get_url($url);
-    if($fn) { 
-      $content = $fn($content,$fn_args); 
-    }
-    
-    // $content.= '<!-- cached:  '.time().'-->';
-    file_put_contents($file,$content);
-
-    return $content;
+    $file_time = false;
+    $data['time'] = $file_time;
 
   }
+
+  if($file_time && ($current_time - $expire_time < $file_time)) {
+
+    $data['response'] = file_get_contents($file);
+
+  } else {
+
+    $content = get_url($url);
+    file_put_contents($file, $content);
+
+    $data['response'] = $content;
+
+  }
+
+  return $data;
 
 }
 
@@ -107,13 +112,16 @@ function get_url($url) {
   curl_setopt($curl,CURLOPT_URL,$url);
   curl_setopt($curl,CURLOPT_RETURNTRANSFER,1); 
   curl_setopt($curl,CURLOPT_CONNECTTIMEOUT,5);
-  $content = curl_exec($curl);
+  $data = curl_exec($curl);
   curl_close($curl);
 
-  return $content;
+  return $data;
 
 }
 
 $file = __DIR__ . '/response.json';
 $api_url = api_url($api_args);
-$monitor_response = json_decode(get_content($file, $api_url), true);
+$data = get_content($file, $api_url);
+
+$monitor_response = json_decode($data['response'], true);
+$monitor_response_time = isset($data['time']) ? $data['time'] : null;
