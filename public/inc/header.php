@@ -13,22 +13,8 @@
     // Cache buster for stylesheet
     $stylesheet = 'style/screen.css?' . filemtime('style/screen.css'); ?>
     <link rel="stylesheet" href="<?php echo $stylesheet; ?>">
-
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script type='text/javascript' src='js/modernizr.js'></script>
     <?php echo theAnalytics(); ?>
   </head>
-  <body><?php
-
-  $monitors = $monitor_response['monitors']['monitor'];
-
-  echo '<ul>';
-
-  foreach($monitors as $monitor) {
-
-    echo '<li>'.$monitor['friendlyname'].' is '.$monitor['status'].'</li>';
-
-
-  }
-
-  echo '</ul>'; ?>
-
+  <body>
