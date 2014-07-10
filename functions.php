@@ -71,7 +71,7 @@ function api_url($api) {
 
 }
 
-function get_content($file,$url,$min = 5) {
+function get_monitors($file,$url,$min = 5) {
 
   $current_time = time(); 
   $expire_time = $min * 60;
@@ -121,7 +121,7 @@ function get_url($url) {
 
 $file = __DIR__ . '/response.json';
 $api_url = api_url($api_args);
-$data = get_content($file, $api_url);
+$data = get_monitors($file, $api_url);
 
 $monitor_response = json_decode($data['response'], true);
 $monitor_response_time = isset($data['time']) ? $data['time'] : null;

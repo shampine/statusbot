@@ -2,16 +2,16 @@
 
 /**
 *
-* Basic configuration for lp-boilerplate. Currently sets environment && hostname.
+* Timezone
+* http://www.php.net/manual/en/timezones.america.php
 *
 **/
 
+date_default_timezone_set('America/Los_Angeles');
+
 /**
-* Defaults:
 *
-* Overwrite these default options below by calling the matching variable before the header include and
-* defining it on your page template (e.g., $default_title => $title) to override the defaults on a per
-* page basis, otherwise leave alone.
+* SEO
 *
 **/
 

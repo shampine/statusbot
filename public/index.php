@@ -1,23 +1,26 @@
-<?php
+<?php include_once('inc/header.php'); ?>
 
-  // Example description & title
-  $description = "This is my description";
-  $title = "Home Page";
+  <div class="container">
+    <p><?php echo date('D g:i a', $monitor_response_time); ?></p>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Server</th>
+            <th><?php echo date('D m.d'); ?></th>
+            <th><?php echo date('D m.d',strtotime("-1 days")); ?></th>
+            <th><?php echo date('D m.d',strtotime("-2 days")); ?></th>
+            <th><?php echo date('D m.d',strtotime("-3 days")); ?></th>
+            <th><?php echo date('D m.d',strtotime("-4 days")); ?></th>
+            <th><?php echo date('D m.d',strtotime("-5 days")); ?></th>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
 
-  include_once('inc/header.php');
-
-?>
-
-<section class="container">
-  <article class="col-xs-6">
-    <h1>lp-boilerplate</h1>
-    <p>
-      Environment: <?php echo $environment; ?><br />
-      Hostname: <?php echo $hostname; ?><br />
-      Site Title: <?php echo $default_title; ?><br />
-      Site Description: <?php echo $default_description; ?><br />
-    </p>
-  </article>
-<section>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
 <?php include_once('inc/footer.php'); ?>
