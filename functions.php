@@ -174,7 +174,7 @@ function sort_monitors($monitor_response = null, $type = null) {
 
   }
 
-  // var_dump($sorted);
+  ksort($sorted);
   return $sorted;
 
 }
