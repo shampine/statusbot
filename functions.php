@@ -40,11 +40,6 @@ function theAnalytics() {
   }
 }
 
-// $file = __DIR__.'/resonse.json';
-// $url =
-
-// $api_data = get_content(__DIR__ . 'response.json', )
-
 function api_url($api) {
 
   $api_url = 'http://api.uptimerobot.com/getMonitors?';
@@ -119,9 +114,78 @@ function get_url($url) {
 
 }
 
+function sort_monitors($monitor_response = null, $type = null) {
+
+  if($monitor_response && $type) {
+
+    if($type === 'servers') {
+
+      $type = '3';
+
+    } elseif ($type === 'sites') {
+
+      $type = '1';
+
+    }
+
+    $monitors = $monitor_response['monitors']['monitor'];
+    $sorted = array();
+
+    foreach($monitors as $monitor) {
+
+      if($monitor['type'] === $type) {
+
+        $uptimeratios = explode('-', $monitor['customuptimeratio']);
+        $count = 1;
+
+        foreach($uptimeratios as $uptimeratio) {
+
+          $uptimeratio = (int) $uptimeratio;
+
+          if($uptimeratio === 100) {
+
+            $ratio[$count] = 'green';
+
+          } elseif ($uptimeratio > 97) {
+
+            $ratio[$count] = 'yellow';
+
+          } else {
+
+            $ratio[$count] = 'red';
+
+          }
+
+          $count++;
+
+        }
+
+        $monitor['ratios'] = $ratio;
+
+        $sorted[$monitor['friendlyname']] = $monitor;
+
+      }
+
+    }
+
+  } else {
+
+    $sorted = 'Must provide monitor json data and a type.';
+
+  }
+
+  // var_dump($sorted);
+  return $sorted;
+
+}
+
 $file = __DIR__ . '/response.json';
 $api_url = api_url($api_args);
 $data = get_monitors($file, $api_url);
 
 $monitor_response = json_decode($data['response'], true);
 $monitor_response_time = isset($data['time']) ? $data['time'] : null;
+
+$servers = sort_monitors($monitor_response, 'servers');
+$sites = sort_monitors($monitor_response, 'sites');
+
