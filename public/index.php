@@ -9,12 +9,11 @@
           <tr class="animated fadeInUp">
             <th>Server</th>
             <th>Current Status</th>
-            <th><?php echo date('D m.d',strtotime("-1 days")); ?></th>
-            <th><?php echo date('D m.d',strtotime("-2 days")); ?></th>
-            <th><?php echo date('D m.d',strtotime("-3 days")); ?></th>
-            <th><?php echo date('D m.d',strtotime("-4 days")); ?></th>
-            <th><?php echo date('D m.d',strtotime("-5 days")); ?></th>
-            </th>
+            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-1 days")); ?></th>
+            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-2 days")); ?></th>
+            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-3 days")); ?></th>
+            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-4 days")); ?></th>
+            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-5 days")); ?></th>
           </tr>
         </thead>
         <tbody><?php
@@ -26,7 +25,7 @@
             echo '<th class="animated flipInX">'.($server['status'] === "2" ? '<i class="fa fa-check-circle"></i> Online' : '<i class="fa fa-times-circle"></i> Offline').'</th>';
 
             foreach($server["ratios"] as $ratio) {
-              echo '<th class="animated flipInX">';
+              echo '<th class="hidden-xs animated flipInX">';
 
               if($ratio === 'green') {
 
@@ -60,12 +59,11 @@
           <tr class="animated fadeInUp">
             <th>Site</th>
             <th>Current Status</th>
-            <th><?php echo date('D m.d',strtotime("-1 days")); ?></th>
-            <th><?php echo date('D m.d',strtotime("-2 days")); ?></th>
-            <th><?php echo date('D m.d',strtotime("-3 days")); ?></th>
-            <th><?php echo date('D m.d',strtotime("-4 days")); ?></th>
-            <th><?php echo date('D m.d',strtotime("-5 days")); ?></th>
-            </th>
+            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-1 days")); ?></th>
+            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-2 days")); ?></th>
+            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-3 days")); ?></th>
+            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-4 days")); ?></th>
+            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-5 days")); ?></th>
           </tr>
         </thead>
         <tbody><?php
@@ -77,7 +75,7 @@
             echo '<th class="animated flipInX">'.($site['status'] === "2" ? '<i class="fa fa-check-circle"></i> Online' : '<i class="fa fa-times-circle"></i> Offline').'</th>';
 
             foreach($site["ratios"] as $ratio) {
-              echo '<th class="animated flipInX">';
+              echo '<th class="hidden-xs animated flipInX">';
 
               if($ratio === 'green') {
 
