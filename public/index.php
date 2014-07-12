@@ -1,6 +1,7 @@
 <?php include_once('inc/header.php'); ?>
 
   <div class="container">
+    <h1><img src="../img/gj.png"/> Statusb<i class="fa fa-check-circle"></i>t</h1>
     <p class="updated animated flash">Updated: <?php echo date('D g:i a', $monitor_response_time); ?></p>
     <div class="table-responsive">
       <table class="table">
