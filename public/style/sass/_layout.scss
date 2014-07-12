@@ -8,11 +8,20 @@ body {
    @include image-2x("../img/navy_blue_@2X.png", 180px, 180px);
   .container {
     width: 100%;
+    h1 {
+      color: #606060;
+      float: left;
+      .fa {
+        font-size: 24px;
+      }
+    }
     p {
       padding: 20px 0 0 0;
       text-align: right;
       color: white;
+      float: right;
       text-shadow: 0 1px 1px solid #000;
+      margin-top: 70px;
     }
     a {
       text-shadow: 0 1px 1px solid #000;
@@ -20,12 +29,13 @@ body {
     .table-responsive {
       border: none;
       table {
-        background: #222222;
+        background: transparent;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         thead {
+          border-bottom: 1px dashed #555;
           th {
-            border-right: 1px solid #000;
+            border-right: none;
             border-bottom: 2px solid #323232;
             padding: 20px;
             text-align: center;
@@ -37,18 +47,19 @@ body {
             background: -o-linear-gradient(top,  #161616 0%,#0f0f0f 100%);
             background: -ms-linear-gradient(top,  #161616 0%,#0f0f0f 100%);
             background: linear-gradient(to bottom,  #161616 0%,#0f0f0f 100%);
+            @include breakpoint(max-med) {
+              
+            }
             &:first-child {
               border-top-left-radius: 10px;
               padding-left: 10px;
             }
             &:last-child {
               border-top-right-radius: 10px;
+              border-top-right-radius: none;
               border-right: none;
             }
           }
-        }
-        tbody {
-          background: #202020;
         }
         tr {
           background: #222222;
@@ -67,17 +78,10 @@ body {
           }
           &:last-child {
             border-bottom-right-radius: 10px;
-            th {
-              &:first-child {
-                border-bottom-left-radius: 10px;
-              }
-              &:last-child {
-                border-bottom-right-radius: 10px;
-              }
-            }
           }
           th {
-            border: 1px solid #313131;
+            border-left: 1px solid #313131;
+            border-bottom: 1px solid #313131;
             color: white;
             text-align: center;
             .fa {
