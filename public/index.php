@@ -14,6 +14,7 @@
             <th class="hidden-xs"><?php echo date('D m.d',strtotime("-3 days")); ?></th>
             <th class="hidden-xs"><?php echo date('D m.d',strtotime("-4 days")); ?></th>
             <th class="hidden-xs"><?php echo date('D m.d',strtotime("-5 days")); ?></th>
+            </th>
           </tr>
         </thead>
         <tbody><?php
@@ -64,6 +65,7 @@
             <th class="hidden-xs"><?php echo date('D m.d',strtotime("-3 days")); ?></th>
             <th class="hidden-xs"><?php echo date('D m.d',strtotime("-4 days")); ?></th>
             <th class="hidden-xs"><?php echo date('D m.d',strtotime("-5 days")); ?></th>
+            </th>
           </tr>
         </thead>
         <tbody><?php

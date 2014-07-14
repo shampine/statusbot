@@ -22,6 +22,10 @@ body {
       float: right;
       text-shadow: 0 1px 1px solid #000;
       margin-top: 70px;
+      @include breakpoint(max-small) {
+        margin-top: 0px;
+        float: left;
+      }
     }
     a {
       text-shadow: 0 1px 1px solid #000;
@@ -47,12 +51,12 @@ body {
             background: -o-linear-gradient(top,  #161616 0%,#0f0f0f 100%);
             background: -ms-linear-gradient(top,  #161616 0%,#0f0f0f 100%);
             background: linear-gradient(to bottom,  #161616 0%,#0f0f0f 100%);
-            @include breakpoint(max-med) {
-              
-            }
             &:first-child {
               border-top-left-radius: 10px;
               padding-left: 10px;
+              @include breakpoint(max-small) {
+                border-top-left-radius: 0px;
+              }
             }
             &:last-child {
               border-top-right-radius: 10px;
