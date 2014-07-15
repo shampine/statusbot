@@ -21,10 +21,12 @@ body {
       color: white;
       float: right;
       text-shadow: 0 1px 1px solid #000;
-      margin-top: 70px;
+      margin-top: 25px;
       @include breakpoint(max-small) {
         margin-top: 0px;
-        float: left;
+        padding: 0;
+        width: 100%;
+        text-align: left;
       }
     }
     a {
@@ -33,73 +35,80 @@ body {
     .table-responsive {
       border: none;
       table {
+        clear: both;
         background: transparent;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         thead {
           border-bottom: 1px dashed #555;
-          th {
-            border-right: none;
-            border-bottom: 2px solid #323232;
-            padding: 20px;
-            text-align: center;
-            color: #999;
-            background: #161616; 
-            background: -moz-linear-gradient(top,  #161616 0%, #0f0f0f 100%);
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#161616), color-stop(100%,#0f0f0f));
-            background: -webkit-linear-gradient(top,  #161616 0%,#0f0f0f 100%);
-            background: -o-linear-gradient(top,  #161616 0%,#0f0f0f 100%);
-            background: -ms-linear-gradient(top,  #161616 0%,#0f0f0f 100%);
-            background: linear-gradient(to bottom,  #161616 0%,#0f0f0f 100%);
-            &:first-child {
-              border-top-left-radius: 10px;
-              padding-left: 10px;
-              @include breakpoint(max-small) {
-                border-top-left-radius: 0px;
-              }
-            }
-            &:last-child {
-              border-top-right-radius: 10px;
-              border-top-right-radius: none;
+          overflow: hidden;
+          tr {
+            th {
               border-right: none;
+              border-left: transparent;
+              border-bottom: 2px solid #323232;
+              padding: 20px;
+              text-align: center;
+              color: #999;
+              background: #161616; 
+              background: -moz-linear-gradient(top,  #161616 0%, #0f0f0f 100%);
+              background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#161616), color-stop(100%,#0f0f0f));
+              background: -webkit-linear-gradient(top,  #161616 0%,#0f0f0f 100%);
+              background: -o-linear-gradient(top,  #161616 0%,#0f0f0f 100%);
+              background: -ms-linear-gradient(top,  #161616 0%,#0f0f0f 100%);
+              background: linear-gradient(to bottom,  #161616 0%,#0f0f0f 100%);
+              &:first-child {
+                border-top-left-radius: 10px;
+                @include breakpoint(max-small) {
+                  border-top-left-radius: 0px;
+                }
+              }
+              &:last-child {
+                border-top-right-radius: 10px;
+                border-top-right-radius: none;
+                border-right: none;
+              }
             }
           }
         }
-        tr {
-          background: #222222;
-          &:nth-child(even) {
-            background: #262626;
-            background: -moz-linear-gradient(top,  #262626 0%, #242424 100%);
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#262626), color-stop(100%,#242424));
-            background: -webkit-linear-gradient(top,  #262626 0%,#242424 100%);
-            background: -o-linear-gradient(top,  #262626 0%,#242424 100%);
-            background: -ms-linear-gradient(top,  #262626 0%,#242424 100%);
-            background: linear-gradient(to bottom,  #262626 0%,#242424 100%);
-          }
-          &:first-child {
-            text-align: left;
-            border-bottom-left-radius: 10px;
-          }
-          &:last-child {
-            border-bottom-right-radius: 10px;
-          }
-          th {
-            border-left: 1px solid #313131;
-            border-bottom: 1px solid #313131;
-            color: white;
-            text-align: center;
-            .fa {
-              &.fa-check-circle {
-                color: green;
-                text-shadow: 0 1px 1px solid #000;
-              }
-              &.fa-minus-circle {
-                color: yellow;
-                text-shadow: 0 1px 1px solid #000;
-              }
-              &.fa-times-circle {
-                color: red;
-                text-shadow: 0 1px 1px solid #000;
+        tbody {
+          tr {
+            background: #222222;
+            &:nth-child(even) {
+              background: #262626;
+              background: -moz-linear-gradient(top,  #262626 0%, #242424 100%);
+              background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#262626), color-stop(100%,#242424));
+              background: -webkit-linear-gradient(top,  #262626 0%,#242424 100%);
+              background: -o-linear-gradient(top,  #262626 0%,#242424 100%);
+              background: -ms-linear-gradient(top,  #262626 0%,#242424 100%);
+              background: linear-gradient(to bottom,  #262626 0%,#242424 100%);
+            }
+            &:first-child {
+              text-align: left;
+              border-bottom-left-radius: 10px;
+            }
+            &:last-child {
+              border-bottom-right-radius: 10px;
+            }
+            th {
+              border-right: #000;
+              border-left: 1px solid #313131;
+              border-bottom: 1px solid #313131;
+              color: white;
+              text-align: center;
+              .fa {
+                &.fa-check-circle {
+                  color: green;
+                  text-shadow: 0 1px 1px solid #000;
+                }
+                &.fa-minus-circle {
+                  color: yellow;
+                  text-shadow: 0 1px 1px solid #000;
+                }
+                &.fa-times-circle {
+                  color: red;
+                  text-shadow: 0 1px 1px solid #000;
+                }
               }
             }
           }
