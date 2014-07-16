@@ -91,6 +91,9 @@ body {
                 &:first-child {
                   border-bottom-left-radius: 10px;
                   border-left: none;
+                  @include breakpoint(max-small) {
+                    border-bottom-left-radius: 0px;
+                  }
                 }
                 &:last-child {
                   border-bottom-right-radius: 10px;
