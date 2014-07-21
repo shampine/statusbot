@@ -80,7 +80,7 @@ function get_monitors($file,$url,$min = 5) {
   } else {
 
     $file_time = false;
-    $data['time'] = $file_time;
+    $data['time'] = $current_time;
 
   }
 
@@ -188,4 +188,3 @@ $monitor_response_time = isset($data['time']) ? $data['time'] : null;
 
 $servers = sort_monitors($monitor_response, 'servers');
 $sites = sort_monitors($monitor_response, 'sites');
-
