@@ -80,7 +80,6 @@ function get_monitors($file,$url,$min = 5) {
   } else {
 
     $file_time = false;
-    $data['time'] = $current_time;
 
   }
 
@@ -94,6 +93,7 @@ function get_monitors($file,$url,$min = 5) {
     file_put_contents($file, $content);
 
     $data['response'] = $content;
+    $data['time'] = $current_time;
 
   }
 
