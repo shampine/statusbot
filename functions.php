@@ -135,18 +135,21 @@ function sort_monitors($monitor_response = null, $type = null) {
 
       if($monitor['type'] === $type) {
 
-        $uptimeratios = explode('-', $monitor['customuptimeratio']);
+        $returnuptimeratios = explode('-', $monitor['customuptimeratio']);
         $count = 1;
+        $ratiosums = 0;
 
-        foreach($uptimeratios as $uptimeratio) {
+        foreach($returnuptimeratios as $returnuptimeratio) {
 
-          $uptimeratio = (int) $uptimeratio;
+          $returnuptimeratio = (float) $returnuptimeratio;
+          
+          $dailyuptimeratios[$count] = $returnuptimeratio * $count - $ratiosums;
 
-          if($uptimeratio === 100) {
+          if($dailyuptimeratios[$count] === 100) {
 
             $ratio[$count] = 'green';
 
-          } elseif ($uptimeratio > 97) {
+          } elseif ($dailyuptimeratios[$count] > 97) {
 
             $ratio[$count] = 'yellow';
 
@@ -155,6 +158,8 @@ function sort_monitors($monitor_response = null, $type = null) {
             $ratio[$count] = 'red';
 
           }
+          
+          $ratiosums = (float) $returnuptimeratio + $ratiosums;
 
           $count++;
 
