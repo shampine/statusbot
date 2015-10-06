@@ -10,6 +10,12 @@
 date_default_timezone_set('America/Los_Angeles');
 
 /**
+* Locale
+**/
+
+setlocale(LC_ALL,'en_us-UTF8'); 
+
+/**
 * SEO & Analytics
 * 
 * Add Google Analytics and meta title/description

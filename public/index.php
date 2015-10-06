@@ -9,11 +9,11 @@
           <tr class="animated fadeInUp">
             <th>Server</th>
             <th>Current Status</th>
-            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-12 hours")); ?></th>
-            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-36 hours")); ?></th>
-            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-60 hours")); ?></th>
-            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-84 hours")); ?></th>
-            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-108 hours")); ?></th>
+            <th class="hidden-xs"><?php echo strftime('%a %m.%d',strtotime("-12 hours")); ?></th>
+            <th class="hidden-xs"><?php echo strftime('%a %m.%d',strtotime("-36 hours")); ?></th>
+            <th class="hidden-xs"><?php echo strftime('%a %m.%d',strtotime("-60 hours")); ?></th>
+            <th class="hidden-xs"><?php echo strftime('%a %m.%d',strtotime("-84 hours")); ?></th>
+            <th class="hidden-xs"><?php echo strftime('%a %m.%d',strtotime("-108 hours")); ?></th>
             </th>
           </tr>
         </thead>
@@ -60,11 +60,11 @@
           <tr class="animated fadeInUp">
             <th>Site</th>
             <th>Current Status</th>
-            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-12 hours")); ?></th>
-            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-36 hours")); ?></th>
-            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-60 hours")); ?></th>
-            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-84 hours")); ?></th>
-            <th class="hidden-xs"><?php echo date('D m.d',strtotime("-108 hours")); ?></th>
+            <th class="hidden-xs"><?php echo strftime('%a %m.%d',strtotime("-12 hours")); ?></th>
+            <th class="hidden-xs"><?php echo strftime('%a %m.%d',strtotime("-36 hours")); ?></th>
+            <th class="hidden-xs"><?php echo strftime('%a %m.%d',strtotime("-60 hours")); ?></th>
+            <th class="hidden-xs"><?php echo strftime('%a %m.%d',strtotime("-84 hours")); ?></th>
+            <th class="hidden-xs"><?php echo strftime('%a %m.%d',strtotime("-108 hours")); ?></th>
             </th>
           </tr>
         </thead>
